@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earth Rotating Around Sun</title>
+  <style>
+    body{
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color:black ;
+      overflow: hidden;
+    }
+    .Container{
+      font-size: 10px;
+      width: 40em;
+      height: 40em;
+      position: relative;
+    }
+    .Sun{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10em;
+      height: 10em;
+      border-radius: 50%;
+      box-shadow: 0 0 10em white;
+      background-color: yellow;
+      z-index: 1;
+    }
+    .Earth,.Moon{
+      position: absolute;
+      border-style: solid;
+      border-color: rgb(215, 212, 227) transparent transparent transparent;
+      border-width:0.1em 0.1em 0 0;
+      border-radius: 50%;
+        }
+        .Earth
+        {
+          top: 10em;
+          left: 40em;
+          right: 40em;
+          width: 30em;
+          height: 30em;
+          animation: orbit 36.5s linear infinite;
+        }
+        
+          
+        .Earth::before,.Moon::before{
+          content: '';
+          position: absolute;
+          border-radius: 50%;
+        }
+        .Earth::before
+        {
+          top:2.8em; 
+          right: 2.8em;
+          width: 3em;
+          height: 3em;
+          background-color: rgb(7, 32, 173);
+        }
+        
+        
+        @keyframes orbit{
+          to{
+            transform: rotate(360deg);
+          }
+        }
+     
+  </style>
+</head>
+<body>
+  <div class="Container"></div>
+  <div class="Earth"></div>
+  <div class="Sun"></div>
+</body>
+</html>
